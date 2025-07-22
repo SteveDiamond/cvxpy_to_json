@@ -1,0 +1,68 @@
+{
+  "objective": {
+    "sense": "minimize",
+    "expression": {
+      "type": "AddExpression",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "x"
+        },
+        {
+          "type": "Variable",
+          "name": "y"
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 0.0
+        },
+        {
+          "type": "Variable",
+          "name": "x"
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 0.0
+        },
+        {
+          "type": "Variable",
+          "name": "y"
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "AddExpression",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x"
+            },
+            {
+              "type": "Variable",
+              "name": "y"
+            }
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 1.0
+        }
+      ]
+    }
+  ]
+}

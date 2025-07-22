@@ -1,0 +1,703 @@
+{
+  "objective": {
+    "sense": "minimize",
+    "expression": {
+      "type": "AddExpression",
+      "args": [
+        {
+          "type": "quad_over_lin",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            },
+            {
+              "type": "Constant",
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "type": "quad_over_lin",
+          "args": [
+            {
+              "type": "reshape",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "y_mat",
+                  "shape": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "data": [
+                [
+                  4
+                ],
+                "F"
+              ]
+            },
+            {
+              "type": "Constant",
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "type": "power",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "z_scalar"
+            }
+          ],
+          "data": [
+            2,
+            1024
+          ]
+        },
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "norm1",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ],
+          "data": [
+            null
+          ]
+        },
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "maximum",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "x_vec",
+                  "shape": [
+                    4
+                  ]
+                },
+                {
+                  "type": "Constant",
+                  "value": 0.0
+                }
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "Sum",
+          "args": [
+            {
+              "type": "maximum",
+              "args": [
+                {
+                  "type": "AddExpression",
+                  "args": [
+                    {
+                      "type": "Variable",
+                      "name": "x_vec",
+                      "shape": [
+                        4
+                      ]
+                    },
+                    {
+                      "type": "Promote",
+                      "args": [
+                        {
+                          "type": "NegExpression",
+                          "args": [
+                            {
+                              "type": "Constant",
+                              "value": 1.0
+                            }
+                          ]
+                        }
+                      ],
+                      "data": [
+                        [
+                          4
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Constant",
+                  "value": 0.0
+                }
+              ]
+            }
+          ],
+          "data": [
+            null,
+            false
+          ]
+        },
+        {
+          "type": "norm_inf",
+          "args": [
+            {
+              "type": "minimum",
+              "args": [
+                {
+                  "type": "AddExpression",
+                  "args": [
+                    {
+                      "type": "Variable",
+                      "name": "x_vec",
+                      "shape": [
+                        4
+                      ]
+                    },
+                    {
+                      "type": "Promote",
+                      "args": [
+                        {
+                          "type": "Constant",
+                          "value": 1.0
+                        }
+                      ],
+                      "data": [
+                        [
+                          4
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Constant",
+                  "value": 2.0
+                }
+              ]
+            }
+          ],
+          "data": [
+            null
+          ]
+        },
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "reshape",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "y_mat",
+                  "shape": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "data": [
+                [
+                  4
+                ],
+                "F"
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "Sum",
+          "args": [
+            {
+              "type": "power",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "y_mat",
+                  "shape": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "data": [
+                2,
+                1024
+              ]
+            }
+          ],
+          "data": [
+            null,
+            false
+          ]
+        },
+        {
+          "type": "power",
+          "args": [
+            {
+              "type": "Pnorm",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "x_vec",
+                  "shape": [
+                    4
+                  ]
+                }
+              ],
+              "data": [
+                2,
+                null
+              ]
+            }
+          ],
+          "data": [
+            2,
+            1024
+          ]
+        },
+        {
+          "type": "Sum",
+          "args": [
+            {
+              "type": "abs",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "x_vec",
+                  "shape": [
+                    4
+                  ]
+                }
+              ]
+            }
+          ],
+          "data": [
+            null,
+            false
+          ]
+        },
+        {
+          "type": "abs",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "z_scalar"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": -3.0
+        },
+        {
+          "type": "Variable",
+          "name": "x_vec",
+          "shape": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "x_vec",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": -2.0
+        },
+        {
+          "type": "Variable",
+          "name": "z_scalar"
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "z_scalar"
+        },
+        {
+          "type": "Constant",
+          "value": 2.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "MulExpression",
+          "args": [
+            {
+              "type": "Parameter",
+              "name": "A_param",
+              "shape": [
+                2,
+                4
+              ]
+            },
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Parameter",
+          "name": "b_param",
+          "shape": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "AddExpression",
+          "args": [
+            {
+              "type": "Parameter",
+              "name": "b_param",
+              "shape": [
+                2
+              ]
+            },
+            {
+              "type": "Promote",
+              "args": [
+                {
+                  "type": "NegExpression",
+                  "args": [
+                    {
+                      "type": "Constant",
+                      "value": 5.0
+                    }
+                  ]
+                }
+              ],
+              "data": [
+                [
+                  2
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "MulExpression",
+          "args": [
+            {
+              "type": "Parameter",
+              "name": "A_param",
+              "shape": [
+                2,
+                4
+              ]
+            },
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "quad_over_lin",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            },
+            {
+              "type": "Constant",
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 10.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 4.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "norm1",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ],
+          "data": [
+            null
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 6.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "reshape",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "y_mat",
+                  "shape": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "data": [
+                [
+                  4
+                ],
+                "F"
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "AddExpression",
+          "args": [
+            {
+              "type": "Sum",
+              "args": [
+                {
+                  "type": "abs",
+                  "args": [
+                    {
+                      "type": "Variable",
+                      "name": "x_vec",
+                      "shape": [
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "data": [
+                null,
+                false
+              ]
+            },
+            {
+              "type": "abs",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "z_scalar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 8.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "maximum",
+          "args": [
+            {
+              "type": "Sum",
+              "args": [
+                {
+                  "type": "power",
+                  "args": [
+                    {
+                      "type": "Variable",
+                      "name": "x_vec",
+                      "shape": [
+                        4
+                      ]
+                    }
+                  ],
+                  "data": [
+                    2,
+                    1024
+                  ]
+                }
+              ],
+              "data": [
+                null,
+                false
+              ]
+            },
+            {
+              "type": "power",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "z_scalar"
+                }
+              ],
+              "data": [
+                2,
+                1024
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 12.0
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "norm_inf",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                4
+              ]
+            }
+          ],
+          "data": [
+            null
+          ]
+        },
+        {
+          "type": "Parameter",
+          "name": "c_param"
+        }
+      ]
+    }
+  ]
+}

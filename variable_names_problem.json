@@ -1,0 +1,79 @@
+{
+  "objective": {
+    "sense": "maximize",
+    "expression": {
+      "type": "Variable",
+      "name": "profit"
+    }
+  },
+  "constraints": [
+    {
+      "type": "Equality",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "profit"
+        },
+        {
+          "type": "AddExpression",
+          "args": [
+            {
+              "type": "Sum",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "revenue_by_product",
+                  "shape": [
+                    3
+                  ]
+                }
+              ],
+              "data": [
+                null,
+                false
+              ]
+            },
+            {
+              "type": "NegExpression",
+              "args": [
+                {
+                  "type": "Variable",
+                  "name": "cost"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 10.0
+        },
+        {
+          "type": "Variable",
+          "name": "cost"
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 0.0
+        },
+        {
+          "type": "Variable",
+          "name": "revenue_by_product",
+          "shape": [
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

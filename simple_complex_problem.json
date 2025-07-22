@@ -1,0 +1,120 @@
+{
+  "objective": {
+    "sense": "minimize",
+    "expression": {
+      "type": "AddExpression",
+      "args": [
+        {
+          "type": "quad_over_lin",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_var",
+              "shape": [
+                3
+              ]
+            },
+            {
+              "type": "Constant",
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "type": "power",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "y_scalar"
+            }
+          ],
+          "data": [
+            2,
+            1024
+          ]
+        },
+        {
+          "type": "Pnorm",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_var",
+              "shape": [
+                3
+              ]
+            }
+          ],
+          "data": [
+            2,
+            null
+          ]
+        },
+        {
+          "type": "abs",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "y_scalar"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 0.0
+        },
+        {
+          "type": "Variable",
+          "name": "x_var",
+          "shape": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "y_scalar"
+        },
+        {
+          "type": "Constant",
+          "value": 5.0
+        }
+      ]
+    },
+    {
+      "type": "Equality",
+      "args": [
+        {
+          "type": "Sum",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_var",
+              "shape": [
+                3
+              ]
+            }
+          ],
+          "data": [
+            null,
+            false
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 1.0
+        }
+      ]
+    }
+  ]
+}

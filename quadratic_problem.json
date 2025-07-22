@@ -1,0 +1,64 @@
+{
+  "objective": {
+    "sense": "minimize",
+    "expression": {
+      "type": "quad_over_lin",
+      "args": [
+        {
+          "type": "Variable",
+          "name": "x_vec",
+          "shape": [
+            2
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 1.0
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 0.0
+        },
+        {
+          "type": "Variable",
+          "name": "x_vec",
+          "shape": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Equality",
+      "args": [
+        {
+          "type": "Sum",
+          "args": [
+            {
+              "type": "Variable",
+              "name": "x_vec",
+              "shape": [
+                2
+              ]
+            }
+          ],
+          "data": [
+            null,
+            false
+          ]
+        },
+        {
+          "type": "Constant",
+          "value": 1.0
+        }
+      ]
+    }
+  ]
+}

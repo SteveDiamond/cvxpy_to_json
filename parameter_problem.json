@@ -1,0 +1,42 @@
+{
+  "objective": {
+    "sense": "minimize",
+    "expression": {
+      "type": "AddExpression",
+      "args": [
+        {
+          "type": "multiply",
+          "args": [
+            {
+              "type": "Parameter",
+              "name": "param_a"
+            },
+            {
+              "type": "Variable",
+              "name": "x"
+            }
+          ]
+        },
+        {
+          "type": "Parameter",
+          "name": "param_b"
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "type": "Inequality",
+      "args": [
+        {
+          "type": "Constant",
+          "value": 1.0
+        },
+        {
+          "type": "Variable",
+          "name": "x"
+        }
+      ]
+    }
+  ]
+}
